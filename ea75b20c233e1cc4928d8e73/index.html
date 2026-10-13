@@ -1,3 +1,30 @@
-<!doctype html><meta charset=utf-8><meta name=robots content=noindex><meta name=viewport content="width=device-width,initial-scale=1"><title>X 日报</title><h2>X 关注日报</h2><ul>
-<li><a href="digest-2026-10-13.html">2026-10-13</a></li>
-</ul>
+<!doctype html><html lang=zh-CN><head><meta charset=utf-8><meta name=robots content="noindex,nofollow"><meta name=viewport content="width=device-width,initial-scale=1"><title>X 关注日报 · 往期</title><style>:root{--paper:oklch(97.4% .009 82);--paper2:oklch(94.6% .013 82);--paper3:oklch(91% .016 80);--ink:oklch(22% .014 60);--ink2:oklch(42% .014 60);--ink3:oklch(57% .012 65);--rule:oklch(87% .013 80);
+--acc:oklch(51% .145 33);--acc2:oklch(43% .13 33);--acc-bg:oklch(93.5% .03 45);
+--serif:"Songti SC","Noto Serif SC","Noto Serif CJK SC","Source Han Serif SC","STSong",serif;--sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans SC","Noto Sans CJK SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+--ease:cubic-bezier(.16,1,.3,1);--s1:4px;--s2:8px;--s3:12px;--s4:16px;--s5:24px;--s6:32px;--s7:48px;--s8:72px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:104px}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.8 var(--sans);font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased}
+::selection{background:var(--acc-bg);color:var(--ink)}a{color:inherit;text-underline-offset:3px;text-decoration-thickness:1px}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:2px}button{font:inherit;color:inherit}
+.wrap{max-width:40rem;margin:0 auto;padding:0 22px var(--s8)}
+/* masthead */
+.mast{padding:var(--s7) 0 var(--s5);border-bottom:1px solid var(--ink);position:relative}
+.mast::after{content:"";position:absolute;left:0;right:0;bottom:-5px;border-bottom:1px solid var(--ink)}
+.date{display:flex;justify-content:space-between;margin:0;font-size:12.5px;color:var(--ink3);letter-spacing:.06em}
+.mast h1{font-family:var(--serif);font-weight:900;font-size:clamp(40px,12vw,60px);line-height:1.05;letter-spacing:-.02em;margin:var(--s3) 0 var(--s4)}
+.dek{margin:0;font-size:15px;line-height:1.7;color:var(--ink2);max-width:34em;text-wrap:pretty}
+/* brief */
+.brief{padding:var(--s6) 0 var(--s3)}.brief h2,.bh{font-family:var(--serif);font-weight:900;font-size:15px;letter-spacing:.12em;margin:0 0 var(--s2);color:var(--acc)}
+.brief ol{list-style:none;margin:0;padding:0;counter-reset:b}
+.brief li{display:grid;grid-template-columns:1fr auto;gap:var(--s3);align-items:baseline;border-top:1px solid var(--rule);padding:var(--s3) 0}
+.brief li:first-child{border-top:0}.brief li a{display:grid;grid-template-columns:2.3em 1fr;gap:var(--s2);align-items:baseline;text-decoration:none}
+.brief .tt{font-family:var(--serif);font-weight:700;font-size:17.5px;line-height:1.5;text-wrap:pretty;transition:color .25s var(--ease)}.brief li a:hover .tt{color:var(--acc)}
+.brief .tp{font-size:12px;color:var(--ink3);white-space:nowrap}.brief li.is-read .tt,.brief li.is-read .n{color:var(--ink3);opacity:.6}.brief li.is-read .tt::after{content:" 已阅";font:12px var(--sans);color:var(--ink3)}
+.n{font-family:var(--serif);font-weight:900;font-size:18px;color:var(--ink3)}.n.hi{color:var(--acc)}.n.mid{color:var(--ink)}
+
+ol{list-style:none;margin:24px 0 0;padding:0}li{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid var(--rule)}
+li a{text-decoration:none;display:flex;align-items:baseline;gap:10px}.t{font-family:var(--serif);font-weight:800;font-size:21px}.y{font-size:12px;color:var(--ink3)}
+.p{display:flex;align-items:center;gap:10px;font-size:12.5px;color:var(--ink3)}.tr{width:72px;height:3px;background:var(--paper3);border-radius:2px;overflow:hidden}.tr i{display:block;height:100%;width:0;background:var(--acc)}li.done .k{color:var(--acc)}</style></head>
+<body><main class=wrap><header class=mast><p class=date><span>往期</span><span>阅读进度保存在本机浏览器</span></p><h1>X 关注日报</h1><p class=dek>每天一期，点进去读。右侧是你在这台设备上的已阅进度。</p></header><ol><li data-d="2026-10-13" data-n="33"><a href="digest-2026-10-13.html"><span class=t>10月13日</span><span class=y>2026</span></a><span class=p><span class=k>0/33</span><span class=tr><i></i></span></span></li></ol></main>
+<script>document.querySelectorAll('li[data-d]').forEach(li=>{let n=+li.dataset.n,r=0;try{const p=JSON.parse(localStorage.getItem('xd:'+li.dataset.d+':__progress')||'null');if(p){r=p.r;n=p.n}else{for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(k.startsWith('xd:'+li.dataset.d+':')&&!k.endsWith('__progress'))r++}}}catch(e){}
+li.querySelector('.k').textContent=r+'/'+n+(n?' · '+Math.round(r/n*100)+'%':'');li.querySelector('.tr i').style.width=(n?r/n*100:0)+'%';if(n&&r>=n)li.classList.add('done')})</script></body></html>
