@@ -94,10 +94,11 @@ h4{font-family:var(--serif);font-size:12.5px;font-weight:900;letter-spacing:.12e
 .note{margin:var(--s4) 0 0;padding:var(--s3) 0 0;border-top:1px dashed var(--rule);font-size:15px;line-height:1.7}
 .note p{margin:0}.note p+p{margin-top:var(--s3)}
 .note b{display:block;font-size:11.5px;font-weight:600;color:var(--ink3);letter-spacing:.08em;margin-bottom:2px}
-.also{margin:var(--s4) 0 0;padding:var(--s3) 0 0;border-top:1px dashed var(--rule)}
-.also h4{margin:0 0 var(--s2)}
-.also ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
-.also li{margin:0}
+.also{margin:var(--s4) 0 0;padding:var(--s3);border:1px solid var(--rule);border-radius:8px;background:var(--paper2)}
+.also h4{margin:0 0 var(--s2);font-family:var(--serif);font-size:13px;font-weight:900;letter-spacing:.12em;color:var(--acc)}
+.also ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:0}
+.also li{margin:0;border-top:1px solid color-mix(in oklch,var(--rule) 70%,transparent)}
+.also li:first-child{border-top:0}
 .also .av{display:grid;gap:2px;padding:10px 0;min-height:var(--tap)}
 .also .who{margin:0;font-size:13.5px;line-height:1.4}
 .also b{font-weight:600;color:var(--ink)}
@@ -105,6 +106,11 @@ h4{font-family:var(--serif);font-size:12.5px;font-weight:900;letter-spacing:.12e
 .also .hdl:hover{color:var(--acc);text-decoration:underline}
 .also .aw{display:block;font-size:13.5px;line-height:1.55;color:var(--ink2);text-decoration:none;overflow-wrap:anywhere;padding:2px 0}
 .also .aw:hover,.also .aw:focus-visible{color:var(--ink);text-decoration:underline}
+.also-more{margin-top:4px;border-top:1px dashed var(--rule);padding-top:4px}
+.also-more summary{cursor:pointer;list-style:none;min-height:var(--tap);display:flex;align-items:center;font-size:13px;color:var(--ink3)}
+.also-more summary::-webkit-details-marker{display:none}
+.also-more summary::after{content:"＋";margin-left:6px;font-size:11px}
+.also-more[open] summary::after{content:"－"}
 /* images */
 .imgs{display:grid;gap:var(--s2);margin:var(--s4) 0 0}.imgs[data-n="2"]{grid-template-columns:1fr 1fr}
 .imgs figure{margin:0;position:relative;background:var(--paper2);border-radius:8px;overflow:hidden;
