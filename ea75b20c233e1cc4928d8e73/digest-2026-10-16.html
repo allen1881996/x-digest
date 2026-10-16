@@ -254,6 +254,18 @@ nav a .tb{position:absolute;left:10px;right:10px;bottom:5px}
 .cmts.cc[open] summary::before{content:"▾ "}
 .cmts.cc ul{margin-top:8px}
 .cmts.cc li{font-size:13.5px}
+/* v9 简讯评论总结：独占一行，不撑高按钮行 */
+.briefs li{grid-template-columns:2.2em minmax(0,1fr)!important;align-items:start}
+.briefs li>p{grid-column:2}
+.briefs li>.cmts.cc{grid-column:2;grid-row:auto;width:100%;min-width:0;margin:2px 0 0;padding:0;border:0;background:none;border-radius:0}
+.briefs li>.cmts.cc summary{display:inline-flex;align-items:center;white-space:nowrap;min-height:32px;padding:0 2px;font-size:12.5px}
+.briefs li>.cmts.cc[open]{padding:4px 12px 10px;border:1px solid var(--rule);border-radius:10px;background:var(--paper2)}
+.briefs li>.br{grid-column:2;align-items:center}
+.briefs .br .rd,.briefs .br .votes button{height:36px;min-height:36px;align-self:center;flex:none;border-radius:999px}
+.briefs .br .votes{width:auto;align-items:center;flex:none}
+.if{align-items:center}
+.briefs .cmts li{display:block!important;grid-template-columns:none!important;padding:0;border:0;opacity:1}
+.cmts li b{white-space:nowrap}
 </style></head><body>
 <main class=wrap>
 <header class=mast><p class=date><span>2026年10月16日 星期五</span><span>过去 24 小时</span></p><h1>X 关注日报</h1>
