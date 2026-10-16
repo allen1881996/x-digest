@@ -242,6 +242,18 @@ nav a .tb{position:absolute;left:10px;right:10px;bottom:5px}
 .cmts ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
 .cmts li{font-size:14.5px;line-height:1.7}
 .cmts li b{display:inline-block;font-size:11px;font-weight:700;padding:1px 6px;margin-right:6px;border-radius:4px;border:1px solid var(--rule);color:var(--ink2);vertical-align:1px}
+/* v8 每条评论总结 */
+.cmts.ci{margin:var(--s4) 0 0;padding:12px 14px}
+.cmts.ci h4{font-size:13px;margin-bottom:8px}
+.cmts.ci li{font-size:14px;line-height:1.65}
+.cmts.cn .cms{margin:0}
+.cmts.cc{margin:8px 0 0;padding:8px 12px;background:transparent}
+.cmts.cc summary{cursor:pointer;font-size:12.5px;font-weight:700;color:var(--acc);list-style:none}
+.cmts.cc summary::-webkit-details-marker{display:none}
+.cmts.cc summary::before{content:"▸ ";color:var(--ink3)}
+.cmts.cc[open] summary::before{content:"▾ "}
+.cmts.cc ul{margin-top:8px}
+.cmts.cc li{font-size:13.5px}
 
 .tools{position:sticky;top:0;z-index:20;background:color-mix(in oklch,var(--paper) 90%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--rule);margin:var(--s4) calc(-1*var(--pad)) 0;padding:calc(8px + env(safe-area-inset-top)) var(--padr) 8px var(--pad);display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .tools input{flex:1 1 180px;min-height:var(--tap);font:16px var(--sans);color:var(--ink);background:var(--paper2);border:1px solid var(--rule);border-radius:999px;padding:0 16px}
