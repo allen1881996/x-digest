@@ -62,7 +62,7 @@ nav::-webkit-scrollbar{display:none}
 nav a{flex:none;font-size:13px;line-height:1;padding:12px 10px;min-height:var(--tap);display:inline-flex;align-items:center;gap:4px;
   text-decoration:none;color:var(--ink2);border-bottom:2px solid transparent;margin-bottom:-1px}
 nav a.on,nav a:active{color:var(--ink);border-color:var(--acc)}
-nav .pc{font-size:11px;color:var(--ink3)}nav a.done .pc{color:var(--acc)}
+
 .rule{margin:var(--s4) 0 0;font-size:13px;color:var(--ink2)}
 .rule summary{cursor:pointer;color:var(--ink3);list-style:none;display:inline-flex;align-items:center;min-height:var(--tap);padding:0 2px}
 .rule summary::-webkit-details-marker{display:none}.rule summary::after{content:"＋";margin-left:6px;font-size:11px}
@@ -229,8 +229,8 @@ article.is-read{opacity:.48}article.is-read:focus-within{opacity:.9}article.is-r
 .tb{display:flex;height:2px;border-radius:1px;background:var(--paper3);overflow:hidden}
 .tb i{display:block;height:100%;width:0;transition:width .5s var(--ease)}.tb .r{background:var(--acc)}.tb .s{background:var(--sv)}
 nav a{position:relative}
-nav a .tb{position:absolute;left:10px;right:10px;bottom:5px}
-.cnt .tb{display:inline-flex;width:44px;margin-left:8px;vertical-align:middle}
+
+
 /* v7：推荐原因（标题下、摘要上） */
 .why{margin:0 0 var(--s3);padding:8px 12px;border-radius:8px;background:var(--acc-bg);font-size:14px;line-height:1.6;color:var(--ink2)}
 .why b{font-size:11.5px;font-weight:700;color:var(--acc);letter-spacing:.08em;margin-right:8px}
@@ -267,6 +267,15 @@ nav a .tb{position:absolute;left:10px;right:10px;bottom:5px}
 .briefs .cmts li{display:block!important;grid-template-columns:none!important;padding:0;border:0;opacity:1}
 .cmts li b{white-space:nowrap}
 
+/* v12 引用原帖子卡片 */
+.qc{margin:var(--s4) 0 0;padding:var(--s3) var(--s4);border:1px solid var(--rule);border-left:3px solid var(--ink3);border-radius:4px;background:var(--paper2)}
+.qc .qh{margin:0;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px;font-size:12.5px;color:var(--ink3)}
+.qc .ql{font-weight:600;color:var(--ink2);letter-spacing:.02em}.qc .qs{margin-left:auto}
+.qc h4{margin:6px 0 0;font-family:var(--serif);font-size:16.5px;line-height:1.45;font-weight:700}.qc h4 a{text-decoration:none;color:var(--ink)}
+.qc p:not(.qh){margin:6px 0 0;font-size:14.5px;line-height:1.7;color:var(--ink2)}
+.qc .qb{margin-top:var(--s2);display:flex}
+.qc .sv{margin-left:-10px}.qc .sv span{display:inline}.qc .qb{margin-top:4px}
+
 .tools{position:sticky;top:0;z-index:20;background:color-mix(in oklch,var(--paper) 90%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--rule);margin:var(--s4) calc(-1*var(--pad)) 0;padding:calc(8px + env(safe-area-inset-top)) var(--padr) 8px var(--pad);display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .tools input{flex:1 1 180px;min-height:var(--tap);font:16px var(--sans);color:var(--ink);background:var(--paper2);border:1px solid var(--rule);border-radius:999px;padding:0 16px}
 .seg{display:inline-flex;border:1px solid var(--rule);border-radius:999px;overflow:hidden}.seg button{min-height:var(--tap);padding:0 14px;font-size:13px;color:var(--ink2)}.seg button[aria-pressed=true]{background:var(--ink);color:var(--paper)}
@@ -280,12 +289,24 @@ nav a .tb{position:absolute;left:10px;right:10px;bottom:5px}
 .sa{display:flex;flex-wrap:wrap;gap:8px;margin-top:var(--s3)}.sa button,.sa a{min-height:var(--tap);display:inline-flex;align-items:center;padding:0 14px;font-size:13px;border:1px solid var(--rule);border-radius:999px;color:var(--ink2);text-decoration:none}
 .sa .dn[aria-pressed=true]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 .empty{padding:var(--s7) 0;text-align:center;color:var(--ink3)}
+.modes{display:flex;gap:4px;overflow-x:auto;margin:var(--s4) 0 0;border-bottom:1px solid var(--rule);scrollbar-width:none}.modes::-webkit-scrollbar{display:none}
+.modes button{flex:none;min-height:var(--tap);padding:0 14px;font-size:14px;color:var(--ink2);border-bottom:2px solid transparent;margin-bottom:-1px}
+.modes button[aria-pressed=true]{color:var(--ink);font-weight:600;border-bottom-color:var(--acc)}.modes button b{font-weight:500;color:var(--ink3);margin-left:4px;font-size:12px}
+.mhint{font-size:13px;color:var(--ink3);margin:var(--s2) 0 0}
+.si .mt{font-size:12px;border:1px solid var(--rule);border-radius:999px;padding:1px 8px;color:var(--ink2)}
+.sa select{min-height:var(--tap);font:13px var(--sans);color:var(--ink2);background:var(--paper);border:1px solid var(--rule);border-radius:999px;padding:0 12px}
 </style></head><body><main class=wrap>
-<header class=mast><p class=date><span>收藏夹</span><span><a href="./">往期日报</a></span></p><h1>稍后看</h1><p class=dek>在日报里点「稍后看」收进来的条目，跨设备同步。内容存了概述、要点和对你的帮助，不用回原页也能看。</p></header>
+<header class=mast><p class=date><span>收藏夹</span><span><a href="./">往期日报</a></span></p><h1>稍后看</h1><p class=dek>在日报里点「稍后看」收进来的条目，跨设备同步。按阅读方式分三类：沉浸阅读（深度长文、论文、访谈，需要整块时间）、工具箱（插件、Skill、提示词、开源工具，用到时再翻）、快读（几分钟能看完）。分类可以在每条下面改。</p></header>
+<nav class=modes aria-label=阅读方式 id=modes></nav><p class=mhint id=mhint></p>
 <div class=tools><input id=q type=search placeholder="搜索标题、作者、关键词" aria-label=搜索><span class=seg role=group aria-label=筛选><button data-f=saved aria-pressed=true>未看</button><button data-f=done aria-pressed=false>已看</button><button data-f=all aria-pressed=false>全部</button></span><span class=sc id=sc></span></div>
 <div id=list><p class=empty>加载中…</p></div>
 <footer class=colophon><p><a href="./">往期日报</a></p></footer></main>
-<script>(()=>{const SB={"u": "https://qwxgglfdekgyvrlddlje.supabase.co", "k": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF3eGdnbGZkZWtneXZybGRkbGplIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTE4ODIxMzAsImV4cCI6MjEwNzQ1ODEzMH0.yhkKfRw8KWTtbTtDTXUlmBxqD07THsi-9KL6SerYZBA", "s": "YxJ6PvnF9wJCVfrQJ1nEhssa7LvHKTPUT7fOpd9Tbhs"},ls=localStorage,SK=id=>'xd:saved:'+id,T=["AI实践应用","AI技术","AI前沿资讯","投资","账户和订阅","其他"];let F='saved',Q='';
+<script>(()=>{const SB={"u": "https://qwxgglfdekgyvrlddlje.supabase.co", "k": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF3eGdnbGZkZWtneXZybGRkbGplIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTE4ODIxMzAsImV4cCI6MjEwNzQ1ODEzMH0.yhkKfRw8KWTtbTtDTXUlmBxqD07THsi-9KL6SerYZBA", "s": "YxJ6PvnF9wJCVfrQJ1nEhssa7LvHKTPUT7fOpd9Tbhs"},ls=localStorage,SK=id=>'xd:saved:'+id,M=["沉浸阅读","工具箱","快读"],HINT={"沉浸阅读":"深度长文、论文、长视频和访谈，适合留到周末整块时间读。","工具箱":"插件、Skill、提示词、开源工具和教程，需要的时候再来翻。","快读":"几分钟能看完的短内容。"};let F='saved',Q='',MF='all';
+const TOOL=/提示词|prompt|开源|GitHub|插件|Skill|skill|工具|模板|一键|脚本|命令行|CLI|SDK|npx|框架|扩展|怎么选|怎么用|用上|配置|清单|App|API/;
+const modeOf=d=>{const t=[d.title,d.overview,d.summary,(d.tags||[]).join(' '),(d.key_points||[]).join(' ')].join(' '),b=d.badges||[];
+ if(/论文|paper|arxiv|访谈|长谈|对谈|播客|podcast|圆桌|演讲|纪录片|长视频|完整视频|万字|研报|课程|lecture/i.test(t))return'沉浸阅读';if(TOOL.test(d.title||''))return'工具箱';if(b.includes('X 长文'))return'沉浸阅读';
+ if(new RegExp(TOOL.source+'|教程|指南|Rust|GPU 加速|库').test(t)||b.includes('教程')||b.includes('清单'))return'工具箱';if(b.includes('长帖')&&(d.overview||'').length+(d.key_points||[]).join('').length>260)return'沉浸阅读';return'快读'};
+const MO=x=>M.includes(x.d.mode)?x.d.mode:modeOf(x.d);
 const E=s=>(s??'').toString().replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const rpc=(fn,b)=>fetch(SB.u+'/rest/v1/rpc/'+fn,{method:'POST',headers:{apikey:SB.k,Authorization:'Bearer '+SB.k,'Content-Type':'application/json'},body:JSON.stringify(b)}).then(r=>{if(!r.ok)throw r.status;return r.status===204?null:r.json()});
 const rec=id=>{try{return JSON.parse(ls.getItem(SK(id))||'null')}catch(e){return null}},put=(id,o)=>{try{ls.setItem(SK(id),JSON.stringify(o))}catch(e){}};
@@ -293,19 +314,25 @@ const all=()=>{const o=[];for(let i=0;i<ls.length;i++){const k=ls.key(i);if(k&&k
 async function push(id){const o=rec(id);if(!o||!o.p)return;try{await rpc('xd_save',{p_secret:SB.s,p_item_id:id,p_date:o.d?.date||'',p_data:o.d||{},p_status:o.st||'saved',p_note:o.n||null,p_deleted:!!o.x,p_updated_at:o.t});const c=rec(id);if(c&&c.t===o.t){delete c.p;put(id,c)}}catch(e){}}
 function render(){let xs=all();const nS=xs.filter(x=>x.st!=='done').length,nD=xs.length-nS;document.getElementById('sc').textContent=`未看 ${nS} · 已看 ${nD}`;
  if(F!=='all')xs=xs.filter(x=>(x.st||'saved')===F);
+ const cnt={};xs.forEach(x=>{const m=MO(x);cnt[m]=(cnt[m]||0)+1});
+ document.getElementById('modes').innerHTML=[['all','全部',xs.length],...M.map(m=>[m,m,cnt[m]||0])].map(([k,l,n])=>`<button type=button data-m="${k}" aria-pressed=${MF===k}>${l}<b>${n}</b></button>`).join('');
+ document.getElementById('mhint').textContent=MF==='all'?'':HINT[MF];
+ if(MF!=='all')xs=xs.filter(x=>MO(x)===MF);
  if(Q){const ws=Q.toLowerCase().split(/\s+/).filter(Boolean);xs=xs.filter(x=>{const h=[x.d.title,x.d.author_name,x.d.author_handle,x.d.topic,x.d.overview,x.d.summary,x.d.help,(x.d.key_points||[]).join(' '),(x.d.tags||[]).join(' '),x.n].join(' ').toLowerCase();return ws.every(w=>h.includes(w))})}
  xs.sort((a,b)=>(b.d.saved_at||b.t).localeCompare(a.d.saved_at||a.t));
  const L=document.getElementById('list');if(!xs.length){L.innerHTML='<p class=empty>'+(Q?'没有匹配的收藏':F==='done'?'还没有已看的条目':'还没有收藏。在日报卡片上点「稍后看」。')+'</p>';return}
- const g={};xs.forEach(x=>{(g[x.d.topic||'其他']=g[x.d.topic||'其他']||[]).push(x)});
- L.innerHTML=[...T,...Object.keys(g).filter(k=>!T.includes(k))].filter(t=>g[t]).map(t=>`<section class=sgrp><h2>${E(t)}<small>${g[t].length} 条</small></h2>`+g[t].map(x=>{const d=x.d,dn=x.st==='done';
+ const g={};xs.forEach(x=>{const m=MO(x);(g[m]=g[m]||[]).push(x)});
+ L.innerHTML=M.filter(t=>g[t]).map(t=>`<section class=sgrp><h2>${E(t)}<small>${g[t].length} 条</small></h2>`+g[t].map(x=>{const d=x.d,dn=x.st==='done';
   return `<article class="si${dn?' done':''}" data-id="${E(x.id)}"><h3><a class=tl href="${E(d.url)}" target=_blank rel=noopener>${E(d.title)}<span class=ext aria-hidden=true>↗</span></a></h3>
-  <p class=meta><span>${E(d.author_name)} <a class=hdl href="https://x.com/${E(d.author_handle)}" target=_blank rel=noopener>@${E(d.author_handle)}</a></span><a href="digest-${E(d.date)}.html#p${E(x.id)}">${E(/_/.test(d.date||'')?'周末报 '+d.date.slice(5,10).replace('-','.')+'–'+d.date.slice(11):d.date+' 日报')}</a>${(d.badges||[]).map(b=>`<span class=fmt>${E(b)}</span>`).join('')}</p>
+  <p class=meta><span>${E(d.author_name)} <a class=hdl href="https://x.com/${E(d.author_handle)}" target=_blank rel=noopener>@${E(d.author_handle)}</a></span><span class=mt>${E(d.topic||'其他')}</span><a href="digest-${E(d.date)}.html#p${E(x.id)}">${E(/_/.test(d.date||'')?'周末报 '+d.date.slice(5,10).replace('-','.')+'–'+d.date.slice(11):d.date+' 日报')}</a>${(d.badges||[]).map(b=>`<span class=fmt>${E(b)}</span>`).join('')}</p>
   <p>${E(d.overview||d.summary)}</p>${(d.key_points||[]).length||d.help?`<details><summary>要点与对你的帮助 ＋</summary>${(d.key_points||[]).length?'<ul>'+d.key_points.map(k=>'<li>'+E(k)+'</li>').join('')+'</ul>':''}${d.help?`<p class=hp><b>对你的帮助</b>${E(d.help)}</p>`:''}</details>`:''}
-  <div class=sa><button class=dn type=button aria-pressed=${dn}>${dn?'已看':'标为已看'}</button><button class=rm type=button>移除</button></div></article>`}).join('')+'</section>').join('')}
+  <div class=sa><button class=dn type=button aria-pressed=${dn}>${dn?'已看':'标为已看'}</button><button class=rm type=button>移除</button><select class=ms aria-label="阅读方式">${M.map(m=>`<option${m===MO(x)?' selected':''}>${m}</option>`).join('')}</select></div></article>`}).join('')+'</section>').join('')}
 document.addEventListener('click',e=>{const a=e.target.closest('.si');const b=e.target.closest('.dn,.rm');if(b&&a){const id=a.dataset.id,o=rec(id),now=new Date().toISOString();
   if(b.classList.contains('dn'))put(id,{...o,st:o.st==='done'?'saved':'done',t:now,p:1});else put(id,{...o,x:true,t:now,p:1});render();push(id);return}
+ const mb=e.target.closest('.modes button');if(mb){MF=mb.dataset.m;render();return}
  const f=e.target.closest('.seg button');if(f){F=f.dataset.f;document.querySelectorAll('.seg button').forEach(x=>x.setAttribute('aria-pressed',x===f));render()}});
 document.getElementById('q').addEventListener('input',e=>{Q=e.target.value.trim();render()});
-async function pull(){try{const rows=await rpc('xd_saved_pull',{p_secret:SB.s});rows.forEach(r=>{const l=rec(r.item_id);if(!l||new Date(r.updated_at)>new Date(l.t))put(r.item_id,{t:r.updated_at,st:r.status,n:r.note,x:r.deleted,d:{date:r.date,title:r.title,author_name:r.author_name,author_handle:r.author_handle,url:r.url,topic:r.topic,badges:r.badges,overview:r.overview,key_points:r.key_points,help:r.help,summary:r.summary,tags:r.tags,saved_at:r.saved_at}})});
+document.addEventListener('change',e=>{const s=e.target.closest('.ms'),a=e.target.closest('.si');if(!s||!a)return;const id=a.dataset.id,o=rec(id);put(id,{...o,d:{...o.d,mode:s.value},t:new Date().toISOString(),p:1});render();push(id)});
+async function pull(){try{const rows=await rpc('xd_saved_pull',{p_secret:SB.s});rows.forEach(r=>{const l=rec(r.item_id);if(!l||new Date(r.updated_at)>new Date(l.t)){put(r.item_id,{t:r.updated_at,st:r.status,n:r.note,x:r.deleted,d:{date:r.date,title:r.title,author_name:r.author_name,author_handle:r.author_handle,url:r.url,topic:r.topic,badges:r.badges,overview:r.overview,key_points:r.key_points,help:r.help,summary:r.summary,tags:r.tags,saved_at:r.saved_at,mode:r.mode}})}else if(l&&l.d&&r.mode&&l.d.mode!==r.mode){l.d.mode=r.mode;put(r.item_id,l)}});
  all().concat([]).forEach(x=>{if(x.p)push(x.id)})}catch(e){}render()}
 render();pull();document.addEventListener('visibilitychange',()=>{if(!document.hidden)pull()})})();</script></body></html>
