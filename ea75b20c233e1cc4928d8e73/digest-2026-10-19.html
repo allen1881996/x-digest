@@ -331,12 +331,40 @@ article.item,li.item{scroll-margin-top:calc(var(--stick,88px) + 8px)}
 .issue-nav a.next::after{content:"→";font-size:13px}
 .issue-nav span.disabled{opacity:.4;cursor:default;pointer-events:none}
 @media(max-width:390px){.issue-nav a,.issue-nav span{font-size:13px;padding:0 10px}}
+
+/* ===== v15 UI ===== */
+.hdr-r{display:inline-flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.past.svh::after{content:none}.past.svh b{font-weight:700;margin-left:2px}
+.tools{margin:var(--s3) 0 0}
+.uf{font-size:12.5px;min-height:32px;padding:0 14px;border:1px solid var(--rule);border-radius:999px;color:var(--ink2)}
+.uf[aria-pressed=true]{background:var(--acc);border-color:var(--acc);color:var(--paper)}
+.only-unread .topic .item.is-read{display:none}
+/* sticky bar：左 已阅｜进度条｜右 状态点 */
+.sy{gap:0}.sy .syt:empty{display:none}.sy[data-st=off] .syt{position:static;width:auto;height:auto;clip:auto;margin-left:5px;color:oklch(55% .15 30)}
+.sy[data-st=ok] i{opacity:.55}
+.bar nav{gap:2px}
+.bar nav a{position:relative;gap:6px;padding:12px 10px 13px;border-bottom:0;margin-bottom:0}
+.bar nav a:first-child{padding-left:0}
+.bar nav .tc{font-size:11px;color:var(--ink3);font-variant-numeric:tabular-nums}
+.bar nav a.on .tn{color:var(--ink);font-weight:600}.bar nav a.done .tc{color:var(--acc)}
+.bar nav .tf{position:absolute;left:10px;right:10px;bottom:4px;height:2px;border-radius:2px;background:var(--paper3);overflow:hidden}
+.bar nav a:first-child .tf{left:0}
+.bar nav .tf b{display:block;height:100%;width:0;background:var(--acc);transition:width .5s var(--ease)}
+.bar nav a.on .tf{background:color-mix(in oklch,var(--acc) 22%,var(--paper3))}
+/* 底部期次导航：不受 nav 横向滚动/负边距影响，完整显示 + 安全区 */
+nav.issue-nav{overflow:visible;margin:var(--s6) 0 var(--s4);padding:var(--s4) 0 6px;scroll-padding:0}
+nav.issue-nav a,nav.issue-nav span{flex:1 1 0;min-width:0;padding:10px 14px;line-height:1.3;margin:0;border-bottom-width:1px;box-sizing:border-box;white-space:nowrap}
+.colophon{padding-bottom:calc(var(--s6) + env(safe-area-inset-bottom))}
+
+.dek .uf{margin-left:4px;min-height:28px;padding:0 12px;font-size:12px;vertical-align:baseline}
+.dek .rule[open]+.uf{margin:8px 0 0}
+#pr-f{transition:none}
 </style></head><body>
 <main class=wrap>
-<header class=mast><p class=date><span>2026年10月19日 星期一</span><a class=past href="./">往期日报</a></p><h1>X 关注日报</h1>
-<p class=dek>今天 93 位关注作者发了 558 条，筛出正文 12 条、候选 10 条 <details class=rule><summary>评分怎么算</summary><p>满分 100。主题与形态分开：主题只表示「讲什么」（AI 前沿资讯 / AI 技术 / AI 实践 / 账户和订阅 / 投资 / 生活 / 其他）；X 长文、长帖、教程、清单是徽章不是主题。<br>分数（v13）：模型通读全文给出价值分，再合成 <b>final ≈ 0.85×价值 + 相对流量/2 + 收藏加成</b>（价值≥80 再 +2）；缺判断时回退深度/增量/作者/流量/贴近启发式。正文 ≥78；70–77 进候选。点分数仍可看分项；「有用/没用」用于调权。进度条：已阅 / 已收藏未读 / 未看，完成度只算已阅。</p></details></p></header>
+<header class=mast><p class=date><span>2026年10月19日 星期一</span><span class=hdr-r><a class="past svh" href="saved.html" aria-label="收藏夹">收藏夹 <b id=sv-n>0</b></a><a class=past href="./">往期日报</a></span></p><h1>X 关注日报</h1>
+<div class=dek><span class=dkt>今天 93 位关注作者发了 558 条，筛出正文 12 条、候选 10 条</span> <details class=rule><summary>评分怎么算</summary><p>满分 100。主题与形态分开：主题只表示「讲什么」（AI 前沿资讯 / AI 技术 / AI 实践 / 账户和订阅 / 投资 / 生活 / 其他）；X 长文、长帖、教程、清单是徽章不是主题。<br>分数（v13）：模型通读全文给出价值分，再合成 <b>final ≈ 0.85×价值 + 相对流量/2 + 收藏加成</b>（价值≥80 再 +2）；缺判断时回退深度/增量/作者/流量/贴近启发式。正文 ≥78；70–77 进候选。点分数仍可看分项；「有用/没用」用于调权。进度条：已阅 / 已收藏未读 / 未看，完成度只算已阅。</p></details> <button type=button class=uf id=uf aria-pressed=false>只看未读</button></div></header>
 <section class=brief aria-labelledby=bt><h2 id=bt>今日要点</h2><ol><li><a href="#p2111789021290430767"><span class="n hi">94</span><span class=tt>Google 开源 Harness²：让 Agent 自己改提示词、工具、记忆这层配置，不动模型权重</span></a><span class=tp>AI 资讯</span></li><li><a href="#p2111835755085504909"><span class="n hi">93</span><span class=tt>Ben Horowitz 和 Gavin Baker 吵 AI 是不是泡沫：一个说借钱囤算力的「中间商」最危险，一个说 GPU 全在满负荷干活</span></a><span class=tp>投资</span></li><li><a href="#p2111869352266146010"><span class="n hi">89</span><span class=tt>归藏整理 Lex Fridman 全部 502 期访谈：中文可读，还能装成手机应用</span></a><span class=tp>AI 资讯</span></li><li><a href="#p2111879742454665582"><span class="n hi">87</span><span class=tt>论文：约 16 个 memory token 打赢全上下文，源文档用量少约 108 倍</span></a><span class=tp>AI 技术</span></li><li><a href="#p2111817405261291635"><span class="n hi">86</span><span class=tt>Ben Horowitz 团队实测：顶级模型写的网站一捅就漏，厂商却说「提示词写错了」</span></a><span class=tp>AI 实践</span></li></ol></section>
-<div class=bar><div class=prog role=status aria-live=polite><span class=pl>已阅 <b id=pr-n>0</b>/12<span id=pr-p>0%</span></span><span class=track><span id=pr-f></span><span id=pr-s></span></span><span class=prog-end><span id=sync class=sy data-st=ing title="同步中…"><i aria-hidden=true></i><span class=syt>同步中…</span></span><a class=svl href="saved.html" aria-label="收藏夹">收藏夹 <b id=sv-n>0</b></a></span></div><nav aria-label="主题"><a href="#t0" data-sec="t0">AI 资讯</a><a href="#t1" data-sec="t1">AI 技术</a><a href="#t2" data-sec="t2">AI 实践</a><a href="#t3" data-sec="t3">账户订阅</a><a href="#t4" data-sec="t4">投资</a></nav></div>
+<div class=bar><div class=prog role=status aria-live=polite><span class=pl>已阅 <b id=pr-n>0</b>/12<span id=pr-p>0%</span></span><span class=track><span id=pr-f></span><span id=pr-s></span></span><span class=prog-end><span id=sync class=sy data-st=ing title="同步中…" role=status><i aria-hidden=true></i><span class=syt></span></span></span></div><nav aria-label="主题"><a href="#t0" data-sec="t0"><span class=tn>AI 资讯</span><span class=tc>0/4</span><i class=tf aria-hidden=true><b></b></i></a><a href="#t1" data-sec="t1"><span class=tn>AI 技术</span><span class=tc>0/2</span><i class=tf aria-hidden=true><b></b></i></a><a href="#t2" data-sec="t2"><span class=tn>AI 实践</span><span class=tc>0/4</span><i class=tf aria-hidden=true><b></b></i></a><a href="#t3" data-sec="t3"><span class=tn>账户订阅</span><span class=tc>0/1</span><i class=tf aria-hidden=true><b></b></i></a><a href="#t4" data-sec="t4"><span class=tn>投资</span><span class=tc>0/1</span><i class=tf aria-hidden=true><b></b></i></a></nav></div>
 <section class=topic id="t0" data-sec="t0"><details open><summary><h2>AI前沿资讯</h2></summary><article class=item id="p2111789021290430767" data-id="2111789021290430767">
 <header class=ih><details class="seal hi"><summary aria-label="综合评分 94 分，点开看分项"><svg class=ring viewBox="0 0 36 36" aria-hidden=true><circle class=rg-t cx=18 cy=18 r=15.5 fill=none stroke-width=1.2 /><circle class=rg-a cx=18 cy=18 r=15.5 fill=none stroke-width=1.6 stroke-linecap=round stroke-dasharray="91.55 97.39" transform="rotate(-90 18 18)" /></svg><span class=num>94</span><span class=meter aria-hidden=true><i style='--v:0.72'></i><i style='--v:1.00'></i><i style='--v:0.80'></i><i style='--v:0.70'></i><i style='--v:0.84'></i></span></summary>
 <dl class=bd><div class=bdh>评分构成 <b>94</b></div><div><dt>深度</dt><dd><span style='--v:0.72'></span></dd><dd class=v>18<small>/25</small></dd></div><div><dt>增量</dt><dd><span style='--v:1.00'></span></dd><dd class=v>25<small>/25</small></dd></div><div><dt>作者</dt><dd><span style='--v:0.80'></span></dd><dd class=v>12<small>/15</small></dd></div><div><dt>流量</dt><dd><span style='--v:0.70'></span></dd><dd class=v>7<small>/10</small></dd></div><div><dt>贴近</dt><dd><span style='--v:0.84'></span></dd><dd class=v>21<small>/25</small></dd></div></dl></details><div class=hd><h3><a class=tl href="https://x.com/aigclink/status/2111789021290430767" target=_blank rel=noopener>Google 开源 Harness²：让 Agent 自己改提示词、工具、记忆这层配置，不动模型权重<span class=ext aria-hidden=true>↗</span></a></h3><p class=by>AIGCLINK <a class=hdl href="https://x.com/aigclink" target=_blank rel=noopener>@aigclink</a><span>3.8万 粉丝</span><span>10月18日 19:58</span><span class=fmt>长帖</span></p><p class=mt><span>赞 84</span><span>转 0</span><span>评 20</span><span>阅 8,541</span></p></div></header>
@@ -395,7 +423,7 @@ const rec=id=>{try{const v=ls.getItem(K(id));if(!v)return null;if(v==="1")return
 const put=(id,o)=>{try{ls.setItem(K(id),JSON.stringify(o))}catch(e){}};
 const get=id=>{const o=rec(id);return!!(o&&o.r)};
 const rpc=(fn,body)=>fetch(`${SB.u}/rest/v1/rpc/${fn}`,{method:"POST",headers:{apikey:SB.k,Authorization:`Bearer ${SB.k}`,"Content-Type":"application/json"},body:JSON.stringify(body)}).then(r=>{if(!r.ok)throw r.status;return r.status===204?null:r.json()});
-const syncEl=()=>document.getElementById('sync');const note=t=>{const e=syncEl();if(!e)return;e.title=t;e.dataset.st=t==='已同步'?'ok':t==='离线模式'?'off':'ing';const x=e.querySelector('.syt');(x||e).textContent=t};
+const syncEl=()=>document.getElementById('sync');const note=t=>{const e=syncEl();if(!e)return;e.title=t;e.dataset.st=t==='已同步'?'ok':/离线/.test(t)?'off':'ing';const x=e.querySelector('.syt');if(x)x.textContent=/离线/.test(t)?t:''};
 async function push(id){const o=rec(id);if(!o||!o.p)return;try{await rpc("xd_push",{p_secret:SB.s,p_date:D,p_item_id:id,p_read:o.r,p_updated_at:o.t});const c=rec(id);if(c&&c.t===o.t){delete c.p;put(id,c)}note("已同步")}catch(e){note("离线，稍后同步")}}
 const voteOf=id=>{try{return ls.getItem(`xd:${D}:fb:${id}`)}catch(e){return null}};
 const setVote=(id,v)=>{try{v?ls.setItem(`xd:${D}:fb:${id}`,v):ls.removeItem(`xd:${D}:fb:${id}`)}catch(e){}};
@@ -413,13 +441,16 @@ function paint(){let r=0;ids.forEach(id=>{const on=get(id);if(on)r++;document.qu
  const sv=ids.filter(id=>!get(id)&&isSv(id)).length;document.getElementById('pr-n').textContent=r;const p=N?Math.round(r/N*100):0;document.getElementById('pr-p').textContent=p+'%';document.getElementById('pr-f').style.width=(N?r/N*100:0)+'%';const ps=document.getElementById('pr-s');if(ps)ps.style.width=(N?sv/N*100:0)+'%';
  const L=(i,v)=>{const e=document.getElementById(i);if(e)e.textContent=v};L('lg-r',r);L('lg-s',sv);L('lg-u',N-r-sv);
  try{ls.setItem(`xd:${D}:__progress`,JSON.stringify({r,n:N}))}catch(e){}
-}
+ paintTabs()}
+function paintTabs(){document.querySelectorAll('.bar nav a[data-sec]').forEach(a=>{const s=document.getElementById(a.dataset.sec);if(!s)return;const li=[...new Set([...s.querySelectorAll('.item')].map(e=>e.dataset.id))];const r=li.filter(get).length,n=li.length;const c=a.querySelector('.tc');if(c)c.textContent=r+'/'+n;const f=a.querySelector('.tf b');if(f)f.style.width=(n?r/n*100:0)+'%';a.classList.toggle('done',n>0&&r>=n)})}
+const UF='xd:onlyUnread';function applyUF(){let v=false;try{v=ls.getItem(UF)==='1'}catch(e){}document.body.classList.toggle('only-unread',v);const b=document.getElementById('uf');if(b){b.setAttribute('aria-pressed',v);b.textContent=v?'只看未读 · 开':'只看未读'}setStick()}
+document.addEventListener('click',e=>{if(!e.target.closest('#uf'))return;let v=false;try{v=ls.getItem(UF)==='1'}catch(e){}try{ls.setItem(UF,v?'0':'1')}catch(e){}applyUF()});
 document.addEventListener('click',e=>{const b=e.target.closest('.rd');if(b){e.preventDefault();const id=b.dataset.id,on=!get(id);put(id,{r:on,t:new Date().toISOString(),p:1});paint();push(id);if(on)goNext(b);return}
  const vb=e.target.closest('.votes button');if(vb){e.preventDefault();const id=vb.parentElement.dataset.id,v=vb.dataset.v;vote(id, voteOf(id)===v?null:v);return}
  const h=e.target.closest('article.is-read .ih');if(h&&!e.target.closest('.seal'))h.parentElement.classList.toggle('peek');
  document.querySelectorAll('details.seal[open]').forEach(d=>{if(!d.contains(e.target))d.open=false})});
-const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('on',a.dataset.sec===en.target.dataset.sec))}}),{rootMargin:"-40% 0px -55% 0px"});
-document.querySelectorAll('section.topic').forEach(s=>io.observe(s));paint();paintVotes();pull();pullVotes();
+const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){document.querySelectorAll('.bar nav a').forEach(a=>a.classList.toggle('on',a.dataset.sec===en.target.dataset.sec))}}),{rootMargin:"-40% 0px -55% 0px"});
+document.querySelectorAll('section.topic').forEach(s=>io.observe(s));applyUF();paint();paintVotes();pull();pullVotes();
 document.addEventListener('visibilitychange',()=>{if(!document.hidden)pull()});window.addEventListener('online',pull);document.addEventListener('xd:saved',paint)})();
 (()=>{const D="2026-10-19",SB={u:"https://qwxgglfdekgyvrlddlje.supabase.co",k:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF3eGdnbGZkZWtneXZybGRkbGplIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTE4ODIxMzAsImV4cCI6MjEwNzQ1ODEzMH0.yhkKfRw8KWTtbTtDTXUlmBxqD07THsi-9KL6SerYZBA",s:"YxJ6PvnF9wJCVfrQJ1nEhssa7LvHKTPUT7fOpd9Tbhs"},ls=window.localStorage,SK=id=>`xd:saved:${id}`;
 let ITEMS={};try{ITEMS=JSON.parse(document.getElementById('xd-items').textContent)}catch(e){}
@@ -441,7 +472,7 @@ function setStick(){document.documentElement.style.setProperty('--stick',stickH(
 addEventListener('resize',setStick);addEventListener('load',setStick);setStick();
 function goNext(btn){const cur=btn.closest('article.item,li.item');if(!cur)return;
  const all=[...document.querySelectorAll('.topic article.item,.topic li.item')];const i=all.indexOf(cur);
- const nx=all.slice(i+1).find(e=>!e.classList.contains('is-read'))||all[i+1];if(!nx)return;
+ const hid=document.body.classList.contains('only-unread');const nx=all.slice(i+1).find(e=>!e.classList.contains('is-read'))||(hid?null:all[i+1]);if(!nx)return;
  const root=document.documentElement,prev=root.style.overflowAnchor;root.style.overflowAnchor='none';
  requestAnimationFrame(()=>requestAnimationFrame(()=>{setStick();const y=nx.getBoundingClientRect().top+scrollY-stickH()-8;
   const rm=matchMedia('(prefers-reduced-motion:reduce)').matches;scrollTo({top:Math.max(0,y),behavior:rm?'auto':'smooth'});
