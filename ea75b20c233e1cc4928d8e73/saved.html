@@ -31,7 +31,19 @@ img{max-width:100%;height:auto}
 .mast::after{content:"";position:absolute;left:0;right:0;bottom:-4px;border-bottom:1px solid var(--ink)}
 .date{display:flex;justify-content:space-between;gap:var(--s2);margin:0;font-size:12px;color:var(--ink3);letter-spacing:.04em}
 .mast h1{font-family:var(--serif);font-weight:900;font-size:clamp(36px,11vw,56px);line-height:1.08;letter-spacing:-.02em;margin:var(--s2) 0 var(--s3);text-wrap:balance}
-.dek{margin:0;font-size:14.5px;line-height:1.65;color:var(--ink2);max-width:36em;text-wrap:pretty}
+.dek{margin:0;font-size:14.5px;line-height:1.65;color:var(--ink2);max-width:40em;text-wrap:pretty}
+.dek .rule{display:inline;margin:0 0 0 6px;font-size:12.5px;vertical-align:baseline}
+.dek .rule summary{display:inline-flex;align-items:center;min-height:28px;padding:0;color:var(--ink3);cursor:pointer;list-style:none;white-space:nowrap;vertical-align:baseline}
+.dek .rule summary::-webkit-details-marker{display:none}
+.dek .rule summary::after{content:"＋";margin-left:4px;font-size:11px}
+.dek .rule[open] summary::after{content:"－"}
+.dek .rule[open]{display:block;margin:8px 0 0}
+.dek .rule[open] p{display:block;margin:6px 0 0;font-size:13px;line-height:1.7;color:var(--ink2);max-width:40em}
+@media(max-width:390px){
+  .dek{font-size:13.5px;line-height:1.55}
+  .dek .rule{font-size:12px;margin-left:4px}
+  .dek .rule summary{min-height:24px}
+}
 /* brief */
 .brief{padding:var(--s5) 0 var(--s2)}
 .brief h2,.bh{font-family:var(--serif);font-weight:900;font-size:13px;letter-spacing:.14em;margin:0 0 var(--s2);color:var(--acc)}
@@ -309,6 +321,16 @@ nav a:first-child{padding-left:0}
 article.item,li.item{scroll-margin-top:calc(var(--stick,88px) + 8px)}
 .if .rd,.if .votes,.if .votes button,.if .sv{width:auto!important}
 .if .votes button{flex:none}
+
+/* ===== v14 UI ===== */
+.issue-nav{display:flex;justify-content:space-between;gap:12px;margin:var(--s6) 0 var(--s4);padding-top:var(--s4);border-top:1px solid var(--rule)}
+.issue-nav a,.issue-nav span{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:var(--tap);padding:0 14px;font-size:14px;font-weight:600;text-decoration:none;border:1px solid var(--rule);border-radius:999px;color:var(--ink2)}
+.issue-nav a{color:var(--acc);border-color:color-mix(in oklch,var(--acc) 35%,transparent)}
+.issue-nav a:hover{background:color-mix(in oklch,var(--acc) 8%,transparent)}
+.issue-nav a.prev::before{content:"←";font-size:13px}
+.issue-nav a.next::after{content:"→";font-size:13px}
+.issue-nav span.disabled{opacity:.4;cursor:default;pointer-events:none}
+@media(max-width:390px){.issue-nav a,.issue-nav span{font-size:13px;padding:0 10px}}
 
 .tools{position:sticky;top:0;z-index:20;background:color-mix(in oklch,var(--paper) 90%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--rule);margin:var(--s4) calc(-1*var(--pad)) 0;padding:calc(8px + env(safe-area-inset-top)) var(--padr) 8px var(--pad);display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .tools input{flex:1 1 180px;min-height:var(--tap);font:16px var(--sans);color:var(--ink);background:var(--paper2);border:1px solid var(--rule);border-radius:999px;padding:0 16px}
